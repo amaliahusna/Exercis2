@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailData extends AppCompatActivity {
     static TextView tvnama,tvtelp;
-    String nm,id,tlp;
+    String nm,id,telpon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,10 +20,10 @@ public class DetailData extends AppCompatActivity {
 
         id = getIntent().getStringExtra("id");
         nm = getIntent().getStringExtra("nama");
-        tlp = getIntent().getStringExtra("telp");
+        telpon = getIntent().getStringExtra("telpon");
 
         setTitle("Detail Data");
         tvnama.setText(nm);
-        tvtelp.setText(tlp);
+        tvtelp.setText(telpon);
     }
 }

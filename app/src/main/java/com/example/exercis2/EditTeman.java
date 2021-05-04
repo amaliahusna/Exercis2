@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class EditTeman extends AppCompatActivity {
     private TextInputEditText tNama,tTelp;
     private Button saveBtn;
-    String nm,tlp,id;
+    String nm,telpon,id;
     DBController controller = new DBController(this);
 
     @Override
@@ -30,12 +30,12 @@ public class EditTeman extends AppCompatActivity {
 
         id = getIntent().getStringExtra("id");
         nm = getIntent().getStringExtra("nama");
-        tlp = getIntent().getStringExtra("telp");
+        telpon = getIntent().getStringExtra("telpon");
 
 
         setTitle("Edit Data");
         tNama.setText(nm);
-        tTelp.setText(tlp);
+        tTelp.setText(telpon);
 
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
@@ -45,11 +45,11 @@ public class EditTeman extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Data belum lengkap!",Toast.LENGTH_LONG).show();
                 }else{
                     nm = tNama.getText().toString();
-                    tlp = tTelp.getText().toString();
+                    telpon = tTelp.getText().toString();
                     HashMap<String,String> val = new HashMap<>();
                     val.put("id",id);
                     val.put("nama",nm);
-                    val.put("telp",tlp);
+                    val.put("telpon",telpon);
                     controller.updateData(val);
                     callHome();
                 }

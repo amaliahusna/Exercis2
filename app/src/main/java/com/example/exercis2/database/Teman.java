@@ -1,12 +1,12 @@
 package com.example.exercis2.database;
 
 public class Teman {
-    String id,nama,telp;
+    String id,nama,telpon;
 
     public Teman(String id,String nama,String telp){
         this.id = id;
         this.nama = nama;
-        this.telp = telp;
+        this.telpon = telp;
     }
 
     public Teman() {
@@ -30,11 +30,11 @@ public class Teman {
     }
 
     public String getTelp() {
-        return telp;
+        return telpon;
     }
 
     public void setTelp(String telp) {
-        this.telp = telp;
+        this.telpon = telp;
     }
 }
 

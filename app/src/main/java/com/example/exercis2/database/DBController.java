@@ -15,7 +15,7 @@ public class DBController extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table teman (id integer primary key, nama text, telp text)");
+        db.execSQL("create table teman (id integer primary key, nama text, telpon text)");
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DBController extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues val = new ContentValues();
         val.put("nama",queryVal.get("nama"));
-        val.put("telp",queryVal.get("telp"));
+        val.put("telpon",queryVal.get("telpon"));
         db.insert("teman",null,val);
         db.close();
     }
@@ -37,7 +37,7 @@ public class DBController extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues val = new ContentValues();
         val.put("nama",queryVal.get("nama"));
-        val.put("telp",queryVal.get("telp"));
+        val.put("telpon",queryVal.get("telpon"));
         db.update("teman",val,"id=?",new String[]{queryVal.get("id")});
         db.close();
     }
@@ -60,7 +60,7 @@ public class DBController extends SQLiteOpenHelper {
                 HashMap<String,String> map = new HashMap<>();
                 map.put("id",cursor.getString(0));
                 map.put("nama", cursor.getString(1));
-                map.put("telp", cursor.getString(2));
+                map.put("telpon", cursor.getString(2));
                 listTeman.add(map);
             } while (cursor.moveToNext());
         }

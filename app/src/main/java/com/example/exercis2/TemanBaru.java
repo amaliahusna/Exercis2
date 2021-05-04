@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class TemanBaru extends AppCompatActivity {
     private TextInputEditText tNama,tTelp;
     private Button saveBtn;
-    String nm,tlp;
+    String nm,telpon;
     DBController controller = new DBController(this);
 
     @Override
@@ -35,10 +35,10 @@ public class TemanBaru extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Data belum lengkap!",Toast.LENGTH_LONG).show();
                 }else{
                     nm = tNama.getText().toString();
-                    tlp = tTelp.getText().toString();
+                    telpon = tTelp.getText().toString();
                     HashMap<String,String> val = new HashMap<>();
                     val.put("nama",nm);
-                    val.put("telp",tlp);
+                    val.put("telpon",telpon);
                     controller.insertData(val);
                     callHome();
                 }

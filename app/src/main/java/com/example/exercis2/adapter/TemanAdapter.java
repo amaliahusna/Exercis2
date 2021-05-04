@@ -51,7 +51,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
         holder.nama.setTextColor(Color.BLUE);
         holder.nama.setTextSize(20);
         holder.nama.setText(nm);
-        holder.telp.setText(tlp);
+        holder.telpon.setText(tlp);
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
                 Intent i = new Intent(c, DetailData.class);
                 i.putExtra("id",id);
                 i.putExtra("nama",nm);
-                i.putExtra("telp",tlp);
+                i.putExtra("telpon",tlp);
                 c.startActivity(i);
             }
         });
@@ -77,7 +77,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
                                 Intent i = new Intent(c, EditTeman.class);
                                 i.putExtra("id",id);
                                 i.putExtra("nama",nm);
-                                i.putExtra("telp",tlp);
+                                i.putExtra("telpon",tlp);
                                 c.startActivity(i);
                                 break;
 
@@ -105,12 +105,12 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
 
     public class TemanViewHolder extends RecyclerView.ViewHolder {
         private CardView card;
-        private TextView nama,telp;
+        private TextView nama,telpon;
         public TemanViewHolder(View v) {
             super(v);
             card = v.findViewById(R.id.card);
             nama = v.findViewById(R.id.textNama);
-            telp = v.findViewById(R.id.textTelp);
+            telpon = v.findViewById(R.id.textTelp);
         }
     }
 }
